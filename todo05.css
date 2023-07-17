@@ -4,7 +4,7 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;  
 }
-/* 전체박스 */
+/* 전체화면 */
 .container{
   width: 100%;
   min-height: 100vh;
@@ -12,7 +12,7 @@
   padding: 10px;
   position: relative;
 }
-
+/* 앱박스 */
 .todo-app{
   width: 100%;
   max-width: 540px;
@@ -23,8 +23,8 @@
   position: relative;
 }
 
-header {
-}
+/* header {
+} */
 
 header h2{
   color: #002765;
@@ -75,10 +75,7 @@ input{
   border-radius: 40px;
 }
 
-/* 인풋과 에드버튼을 받아서 들어가는 클래스 가장상위리스트 */
-#toDoList{
 
-}
 ul li {
   list-style: none;
   font-size: 17px;
