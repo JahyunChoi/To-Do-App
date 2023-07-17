@@ -11,17 +11,28 @@ function addTask(){
     line.innerHTML = inputBox.value;
     toDoList.appendChild(line);
 
-    //액션버튼들
-    let delButton = document.createElement("delButton");
-    delButton.innerHTML = "\u00d7";
-    line.appendChild(delButton);
-    let editButton = document.createElement("editButton");
-    editButton.innerHTML = "수정";
-    line.appendChild(editButton);
+    createButtons(line);
   }
   inputBox.value = '';
   saveData();
 }
+
+//수정삭제버튼들함수 //챗치피티활용
+function createButtons(line) {
+  let span = document.createElement("span");
+  span.innerHTML = line.innerHTML;
+  line.innerHTML = '';
+  line.appendChild(span);
+
+  let delButton = document.createElement("delButton");
+  delButton.innerHTML = "\u00d7";
+  line.appendChild(delButton);
+  
+  let editButton = document.createElement("editButton");
+  editButton.innerHTML = "수정";
+  line.appendChild(editButton);
+}
+
 
 toDoList.addEventListener("click", function(e){
   if(e.target.tagName ==="LI"){
@@ -35,7 +46,8 @@ toDoList.addEventListener("click", function(e){
     saveData();
   }else if(e.target.tagName === "EDITBUTTON"){
     newToDo = prompt("수정 내용을 입력하세요");
-    e.target.parentElement.innerHTML = newToDo;
+    //e.target.parentElement.innerHTML = newToDo;
+    e.target.parentElement.firstChild.innerHTML = newToDo;
   }else if(e.target.tagName === "DELBUTTON"){
     e.target.parentElement.remove();
     saveData();
@@ -44,8 +56,9 @@ toDoList.addEventListener("click", function(e){
 
 endedList.addEventListener("click", function(e){
   if(e.target.tagName ==="LI"){
-    e.target.classList.toggle("unchecked");
-    if (e.target.classList.contains("unchecked")) {
+    //체크해제하면돌아옴
+    e.target.classList.toggle("checked");
+    if (e.target.classList.contains("checked")) {
     moveItem(e.target, toDoList, endedList);
     } else {
       moveItem(e.target, endedList, toDoList);
@@ -56,7 +69,9 @@ endedList.addEventListener("click", function(e){
     saveData();
   }else if(e.target.tagName === "EDITBUTTON"){
     newToDo = prompt("수정 내용을 입력하세요");
-    e.target.parentElement.innerHTML = newToDo;
+    //챗치피티활용
+    //e.target.parentElement.innerHTML = newToDo;
+    e.target.parentElement.firstChild.innerHTML = newToDo;
   }
 }, false);
 
