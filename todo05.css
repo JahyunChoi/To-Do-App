@@ -1,0 +1,188 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;  
+}
+/* 전체박스 */
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: #b5b4b4;
+  padding: 10px;
+  position: relative;
+}
+
+.todo-app{
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  position: relative;
+}
+
+header {
+}
+
+header h2{
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resetBtn{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+  top: 40px;
+  left: 430px;
+}
+
+/* 인풋과 ADD버튼 */
+.toDoRow{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input{
+  float: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+.addBtn{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff5945;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+/* 인풋과 에드버튼을 받아서 들어가는 클래스 가장상위리스트 */
+#toDoList{
+
+}
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+#toDoList::before{
+
+}
+
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(image/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+/* 그아래 */
+
+
+/* 완료목록리스트 */
+#endedList{
+
+}
+
+#endedList::before{
+
+}
+
+/* checked되면 회색으로변하고줄감 */
+ul li.checked{
+  color: #a5a5a5;
+  text-decoration: line-through;   
+}
+/* unchecked되면 원래대로 돌아옴 */
+ul li.unchecked{
+  color: #000000;
+  text-decoration: none; 
+}
+/* 이미지가 checked로 변함 */
+ul li.checked::before{
+  background-image: url(image/checked.png);
+}
+/* 이미지가 unchecked로 변함 */
+ul li.unchecked::before {
+  background-image: url(image/unchecked.png);
+
+}
+
+
+ul li editButton{
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  width: 60px;
+  height: 40px;
+  font-size: 15px;
+  color: gray;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+ul li delButton{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 40%;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid rgb(148, 148, 148);
+  margin: 30px 10px 10px 10px;
+}
+
+h5{
+  margin-left: 10px;
+} 
+
+
+
+/* 필요함? */
+#tasks .task .actions {
+  display: flex;
+  margin: 5px 20px;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 7.5px 10px 10px;
+}

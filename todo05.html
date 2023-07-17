@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-백업</title>
+  <link rel="stylesheet" href="todo05.css">
+</head>
+
+
+<!-- 수정할부분
+클릭 두번해야 윗목록으로 넘어옴
+수정하고나면 수정삭제버튼들이 사라짐 -->
+
+
+
+
+<body>
+  <div class="container">
+    <div class="todo-app">
+      <header>
+        <h2>할일 목록 v5</h2>
+        <button onclick="dataReset()" class="resetBtn">전체삭제</button>
+        <div class="toDoRow">
+          <input type="text" id="input-box" placeholder="Add your text">
+          <button onclick="addTask()" class="addBtn">Add</button>
+        </div>
+      </header>
+      <ul id="toDoList">
+        <div class="tasks">
+
+          <!-- <div class="content">
+            <input type="text" class="text" value="할일목록
+            ">
+          </div>
+          <div class="actions">
+            <button class="edit">수정</button>
+            <button class="delete">X</button>
+          </div> -->
+
+        </div>
+      </ul>
+      <hr>
+      <h5>완료된 목록</h5>
+      <ul id="endedList"></ul>
+  </div>
+  
+
+
+<script src="todo05.js"></script>
+</body>
+
+</html>
